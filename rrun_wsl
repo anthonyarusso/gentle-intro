@@ -9,8 +9,8 @@ if [[ $extName == ".rs" ]]
 then
 	binName="${binName::(-3)}"
 	[[ -d rrun-bin ]] || mkdir rrun-bin
-	rustc --out-dir="rrun-bin" $binName.rs
-	./rrun-bin/$binName ${@:2}
+	rustc.exe --out-dir="rrun-bin" $binName.rs
+	./rrun-bin/$binName.exe ${@:2}
 else
 	echo "Not a Rust source file."
 fi
