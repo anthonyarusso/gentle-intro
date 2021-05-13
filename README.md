@@ -1,5 +1,20 @@
 A repository containing examples from [Steve Donovan's Rust guidebook](https://stevedonovan.github.io/rust-gentle-intro/).
 
+This repository contains scripts to help compile and execute the Rust source files
+while organizing binaries into convenient subdirectories to keep your workspace clean.
+
+To run examples use one of the following methods:
+
+- Invoke [rustc](https://www.rust-lang.org/tools/install) directly. I suggest you use the `--out-dir` option to place your binaries into a subdirectory.
+
+- With [Powershell 7](https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell?view=powershell-7.1):
+	- Run `Set-ExecutionPolicy RemotedSigned` to enable script execution.
+	- Run the provided `rrun_pwsh.ps1` script like so: `.\rrun_pwsh.ps1 [source file] [arguments for the binary]`.
+	- Example `.\rrun_pwsh.ps1 .\1\args0.rs hello world`.
+
+
+
+
 To run examples either invoke `rustc` directly or [install Powershell 7](https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell-core-on-windows) and invoke the provided `rrun_pwsh.ps1` script.
 
 Run the script as follows:
