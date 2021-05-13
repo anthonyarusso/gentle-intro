@@ -34,7 +34,9 @@ leverage autocomplete. It may also help to rename the script to just `rrun.ps1` 
 `rrun` for brevity.
 
 IMPORTANT NOTE:
-Arguments passed to Rust executables INCLUDE both '.\rrun_pwsh.ps1' 
-and the Rust source file path as a String. Therefore, if you iterate
+Arguments passed to Rust executables include the source file's path
+and, in Powershell's case the script's path as well.
+
+Therefore, if you iterate
 through `env::args()` or use `env::args().nth()` you will need to use
 the `.skip(2)` iterator method to skip these first two arguments.
