@@ -1,0 +1,16 @@
+!/bin/bash
+
+# This is a BASH script. To run this file as an executable
+# first run `chmod u+x rrun_bash` to make this directly executable.
+
+binName=$1
+extName="${binName:(-3)}"
+if [ $extName == ".rs" ]
+then
+	binName="${binName::(-3)}"
+	[[ -d rrun-bin ]] || mkdir rrun-bin
+	rustc --out-dir="rrun-bin" $binName.rs
+	./rrun-bin/$binName ${@:2}
+else
+	echo "Not a Rust source file."
+fi
